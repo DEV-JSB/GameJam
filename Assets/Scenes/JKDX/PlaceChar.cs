@@ -17,12 +17,5 @@ public class PlaceChar : MonoBehaviour
     {
         
     }
-    void placeCharacter(GameObject character)
-    {
-        
-        mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        //Vector3 gridpos = 
-        //character.transform.position = 
-    }
+
 }
