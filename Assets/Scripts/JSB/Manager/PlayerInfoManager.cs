@@ -16,7 +16,7 @@ public class PlayerInfoManager : MonoBehaviour
     }
     [SerializeField] private List<Transform> lstRoadRoute;
     public List<Transform> LstRoadRoute => lstRoadRoute;
-    [SerializeField] RiverPioneer playerUnit;
+    [SerializeField] public RiverPioneer playerUnit;
     [SerializeField] private MoneyUI moneyUI;
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private int playerMaxHealth;

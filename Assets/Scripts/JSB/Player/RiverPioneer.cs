@@ -8,7 +8,7 @@ public class RiverPioneer : MonoBehaviour
     [SerializeField] private float moveSpeed;
 
     private List<Transform> lstRoadRoute;
-    private int moveIndex = 0;
+    public int moveIndex = 0;
 
     private Vector3 direction;
 
