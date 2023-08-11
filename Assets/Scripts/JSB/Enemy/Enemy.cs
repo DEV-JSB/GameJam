@@ -18,6 +18,16 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void Attack();  
     public abstract void EnemyMove();
+
+
+    public void HpDecrease(int damage)
+    {
+        enemyHealth -= damage;
+        if(enemyHealth < 0f)
+        {
+        }
+    }
+
     public void SettingEnemyInfo(Transform playerTrans)
     {
         playerPosition = playerTrans;

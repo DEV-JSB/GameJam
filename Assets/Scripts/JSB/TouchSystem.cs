@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class TouchSystem : MonoBehaviour
 {
+    public bool checkingTouch;
+
+    private Vector3 mousePosition;
+
+    private void Start()
+    {
+        checkingTouch = true;
+    }
     void Update()
     {
+        if (!checkingTouch)
+            return;
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, transform.forward);
+
+            if (hit)
             {
                 if (hit.rigidbody != null)
                 {
