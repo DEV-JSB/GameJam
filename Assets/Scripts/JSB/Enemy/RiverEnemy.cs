@@ -29,6 +29,7 @@ public class RiverEnemy : Enemy
         Vector3 transform = this.transform.position;
         float moveValue = Time.deltaTime * moveSpeed;
         this.transform.position = transform + (direction * moveValue);
+        ArriveCheck();
     }
     
     private void ArriveCheck()
@@ -48,9 +49,4 @@ public class RiverEnemy : Enemy
         }
     }
 
-    private void FixedUpdate()
-    {
-        EnemyMove();
-        ArriveCheck();
-    }
 }

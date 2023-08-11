@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    enum EnemyType
+    enum EnemySawpnType
     {
         OUTSIDE,
-        END
+        RIVER,
     }
     enum SpawnPivot
     {
+        SP_ORIGIN,
         SP_ROW,
         SP_COLUM,
     }
+
 
     [SerializeField] private Transform player;
     [Header("적이 증가한다면 타입에 맞춰서 적 프리펩을 넣어야함")]
@@ -24,17 +26,18 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float spawnCoolTime;
 
-    private EnemyType createdType;
     private float timer;
+
     private void CreateEnemy()
     {
         int type = Random.Range(0, (int)EnemyType.END);
-        createdType = (EnemyType)type;
 
         float correctionValue = Random.Range(-range, range); 
         Vector3 spawnPoint = this.transform.position;
         switch(spawnPivot)
         {
+            case SpawnPivot.SP_ORIGIN:
+                break;
             case SpawnPivot.SP_COLUM:
                 spawnPoint.y += correctionValue;
                 break;
@@ -42,19 +45,13 @@ public class Spawner : MonoBehaviour
                 spawnPoint.x += correctionValue;
                 break;
         }
+        Debug.Log(spawnPoint);
         GameObject createdEnemy = GameObject.Instantiate(lstEnemyPrefabs[type], spawnPoint,Quaternion.identity,null);
-        SettingEnemy(createdEnemy);
+        createdEnemy.GetComponent<Enemy>().SettingEnemyInfo(player);
     }
 
-    private void SettingEnemy(GameObject createdEnemy)
-    {
-        switch(createdType)
-        {
-            case EnemyType.OUTSIDE:
-                createdEnemy.GetComponent<OutsideEnemy>().SettingEnemyInfo(player);
-                break;
-        }
-    }
+
+
 
     private void Update()
     {
