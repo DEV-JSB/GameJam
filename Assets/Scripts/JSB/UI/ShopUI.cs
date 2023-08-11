@@ -23,7 +23,6 @@ public class ShopUI : MonoBehaviour
     private void OnEnable()
     {
         startGetTurretProduction = false;
-        touchSystem.checkingTouch = false;
     }
     private void Start()
     {
@@ -34,14 +33,19 @@ public class ShopUI : MonoBehaviour
 
     private void TransformSetting()
     {
+        GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
         Vector3 pos = camera.WorldToScreenPoint(buildSpacePosition);
-        if(null == rectTransform)
+        pos.z = 0;
+        if (null == rectTransform)
             rectTransform = GetComponent<RectTransform>();
 
         Vector2 canvasPos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, pos, camera, out canvasPos);
         GetComponent<RectTransform>().anchoredPosition = canvasPos;
-        
+
+        Debug.Log($"{pos} => SettingPosition {canvasPos}");
+
     }
 
     private void CloseShop()

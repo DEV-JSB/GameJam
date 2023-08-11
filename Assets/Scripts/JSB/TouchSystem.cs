@@ -38,7 +38,10 @@ public class TouchSystem : MonoBehaviour
             else
             {
                 if(popUpingShop)
+                {
                     shopUI.gameObject.SetActive(false);
+                    popUpingShop = false;
+                }
                 Debug.Log("NotHit");
             }
         }
