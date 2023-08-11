@@ -7,8 +7,13 @@ public class ShopUI : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private TouchSystem touchSystem;
+
     //[SerializeField] private Button closeShopButton;
-    //[SerializeField] private Button getTurretButton;
+    [SerializeField] private Button getTurretButton;
+    [SerializeField] private GameObject turretCreatorUI;
+
+    [SerializeField] private Button turretInfoButton;
+    [SerializeField] private GameObject turretInfoUI;
 
     private Vector3 buildSpacePosition;
 
@@ -20,6 +25,10 @@ public class ShopUI : MonoBehaviour
         buildSpacePosition = position;
         TransformSetting();
     }
+    private void OnDisable()
+    {
+        turretInfoButton.gameObject.SetActive(false);
+    }
     private void OnEnable()
     {
         startGetTurretProduction = false;
@@ -27,7 +36,7 @@ public class ShopUI : MonoBehaviour
     private void Start()
     {
         //closeShopButton.onClick.AddListener(CloseShop);
-        //getTurretButton.onClick.AddListener(CreateTurret);
+        getTurretButton.onClick.AddListener(OpenShop);
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -56,15 +65,9 @@ public class ShopUI : MonoBehaviour
             this.gameObject.SetActive(false);
     }
 
-    private void SettingTurretType()
+    private void OpenShop()
     {
-
-    }
-    private void CreateTurret()
-    {
-        SettingTurretType();
-        // 터랫 생성 로직
-        StartCoroutine(nameof(StartGetTurretProdiction));
+        turretCreatorUI.SetActive(true);
     }
 
     private IEnumerator StartGetTurretProdiction()
