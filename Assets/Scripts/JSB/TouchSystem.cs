@@ -5,12 +5,14 @@ using UnityEngine;
 public class TouchSystem : MonoBehaviour
 {
     public bool checkingTouch;
+    [SerializeField] private ShopUI shopUI;
 
     private Vector3 mousePosition;
-
+    private bool popUpingShop;
     private void Start()
     {
         checkingTouch = true;
+        popUpingShop = false;
     }
     void Update()
     {
@@ -26,13 +28,19 @@ public class TouchSystem : MonoBehaviour
 
             if (hit)
             {
-                if (hit.rigidbody != null)
+                if (hit.rigidbody.gameObject.CompareTag("TurretSpace"))
                 {
-                    Debug.Log("Hit");
+                    shopUI.SettingPosition(hit.rigidbody.gameObject.transform.position);
+                    shopUI.gameObject.SetActive(true);
+                    popUpingShop = true;
                 }
             }
             else
+            {
+                if(popUpingShop)
+                    shopUI.gameObject.SetActive(false);
                 Debug.Log("NotHit");
+            }
         }
     }
 }

@@ -6,7 +6,6 @@ public class RiverEnemy : Enemy
 {
     private List<Transform> lstRoadRoute;
 
-    [SerializeField] private float moveSpeed;
 
     private int moveIndex = 0;
 

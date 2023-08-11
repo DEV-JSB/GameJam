@@ -10,7 +10,8 @@ enum EnemyType
 
 public abstract class Enemy : MonoBehaviour
 {
-    
+    [SerializeField] protected float moveSpeed;
+
     [SerializeField] protected float attackRange;
     [SerializeField] private int enemyHealth;
 
@@ -19,12 +20,13 @@ public abstract class Enemy : MonoBehaviour
     public abstract void Attack();  
     public abstract void EnemyMove();
 
-
     public void HpDecrease(int damage)
     {
         enemyHealth -= damage;
+        Debug.Log("데미지 받음");
         if(enemyHealth < 0f)
         {
+           
         }
     }
 
