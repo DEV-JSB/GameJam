@@ -7,11 +7,14 @@ public class RiverLine : MonoBehaviour
     LineRenderer lineRenderer;
     List<Transform> riverEdge;
     GameObject player;
+    Vector3 previousPosition;
+    [SerializeField]float minDistance;
     // Start is called before the first frame update
     void Start()
     {
         player = PlayerInfoManager.Instance.playerUnit.gameObject;
         this.lineRenderer = this.GetComponent<LineRenderer>();
+        previousPosition = player.transform.position;
         //riverEdge = PlayerInfoManager.Instance.LstRoadRoute;
         //this.lineRenderer.positionCount = riverEdge.Count;
         this.lineRenderer.positionCount = 2;
@@ -28,15 +31,22 @@ public class RiverLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.lineRenderer.positionCount = player.GetComponent<RiverPioneer>().moveIndex + 1;
-        this.lineRenderer.SetPosition(player.GetComponent<RiverPioneer>().moveIndex, player.transform.position);
-        for (int i = 0; i < this.lineRenderer.positionCount; i++)
+        if (Vector3.Distance(player.transform.position, previousPosition) > minDistance)
         {
-            if(player.GetComponent<RiverPioneer>().moveIndex > i)
-            {
-                this.lineRenderer.SetPosition(i, PlayerInfoManager.Instance.LstRoadRoute[i].position);
-            }
-            
+            lineRenderer.positionCount++;
+            lineRenderer.SetPosition(lineRenderer.positionCount - 1, player.transform.position);
+            previousPosition = player.transform.position;
         }
+        //this.lineRenderer.positionCount = player.GetComponent<RiverPioneer>().moveIndex + 1;
+
+        //this.lineRenderer.SetPosition(player.GetComponent<RiverPioneer>().moveIndex, player.transform.position);
+        //for (int i = 0; i < this.lineRenderer.positionCount; i++)
+        //{
+        //    if(player.GetComponent<RiverPioneer>().moveIndex > i)
+        //    {
+        //        this.lineRenderer.SetPosition(i, PlayerInfoManager.Instance.LstRoadRoute[i].position);
+        //    }
+            
+        //}
     }
 }
