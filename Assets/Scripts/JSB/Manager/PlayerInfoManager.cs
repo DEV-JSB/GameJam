@@ -14,6 +14,9 @@ public class PlayerInfoManager : MonoBehaviour
             return instance;
         }
     }
+    [SerializeField] private List<Transform> lstRoadRoute;
+    public List<Transform> LstRoadRoute => lstRoadRoute;
+    [SerializeField] RiverPioneer playerUnit;
     [SerializeField] private MoneyUI moneyUI;
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private int playerMaxHealth;
@@ -30,6 +33,7 @@ public class PlayerInfoManager : MonoBehaviour
     private void Start()
     {
         healthUI.InitHealth(playerMaxHealth);
+        playerUnit.PlayerInit();
     }
     public void DecreaseHealth(int value)
     {
