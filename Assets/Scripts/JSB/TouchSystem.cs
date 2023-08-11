@@ -18,6 +18,8 @@ public class TouchSystem : MonoBehaviour
                     Debug.Log("Hit");
                 }
             }
+            else
+                Debug.Log("NotHit");
         }
     }
 }
