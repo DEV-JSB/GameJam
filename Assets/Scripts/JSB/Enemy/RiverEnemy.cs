@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RiverEnemy : Enemy
 {
-    [SerializeField] private List<Transform> lstRoadRoute;
+    private List<Transform> lstRoadRoute;
 
     [SerializeField] private float moveSpeed;
 
