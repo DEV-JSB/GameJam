@@ -37,7 +37,6 @@ public class RiverPioneer : MonoBehaviour
     {
         // 트랜스폼 직접적으로 접근하는게 좋지 않을 것 같음
         float distance = Vector3.Distance(this.transform.position, lstRoadRoute[moveIndex].transform.position);
-        Debug.Log($"{distance} : 목표지점 = {lstRoadRoute[moveIndex].transform.position}");
         if (distance <= 0.1f)
         {
             if (moveIndex + 1 < lstRoadRoute.Count)
