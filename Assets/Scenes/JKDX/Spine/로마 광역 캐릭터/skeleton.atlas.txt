@@ -1,0 +1,32 @@
+skeleton.png
+	size: 690, 272
+	filter: Linear, Linear
+	pma: true
+#1_helmet
+	bounds: 2, 15, 255, 312
+	offsets: 114, 1005, 1080, 1350
+	rotate: 90
+#2_head
+	bounds: 316, 15, 255, 204
+	offsets: 108, 997, 1080, 1350
+	rotate: 90
+#3_body
+	bounds: 522, 159, 111, 125
+	offsets: 179, 894, 1080, 1350
+	rotate: 90
+#4_R_arm
+	bounds: 522, 2, 88, 74
+	offsets: 128, 927, 1080, 1350
+#5_sword
+	bounds: 649, 68, 36, 202
+	offsets: 70, 911, 1080, 1350
+#6_LeftArm
+	bounds: 522, 78, 83, 79
+	offsets: 257, 921, 1080, 1350
+#7_RLeg
+	bounds: 607, 79, 39, 78
+	offsets: 189, 844, 1080, 1350
+#8_LLeg
+	bounds: 612, 25, 41, 76
+	offsets: 239, 846, 1080, 1350
+	rotate: 90
