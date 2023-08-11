@@ -45,7 +45,6 @@ public class EnemySpawner : MonoBehaviour
                 spawnPoint.x += correctionValue;
                 break;
         }
-        Debug.Log(spawnPoint);
         GameObject createdEnemy = GameObject.Instantiate(lstEnemyPrefabs[type], spawnPoint,Quaternion.identity,null);
         createdEnemy.GetComponent<Enemy>().SettingEnemyInfo(player);
     }

@@ -5,9 +5,6 @@ using UnityEngine;
 public class OutsideEnemy : Enemy
 {
 
-    [SerializeField] private float moveValue;
-
-
     public override void Attack()
     {
 
@@ -17,7 +14,7 @@ public class OutsideEnemy : Enemy
     {
         if (null == playerPosition)
             return;
-        transform.position = Vector3.MoveTowards(transform.position, playerPosition.position,moveValue * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
     }
     // 비 효율적인 구문
     
