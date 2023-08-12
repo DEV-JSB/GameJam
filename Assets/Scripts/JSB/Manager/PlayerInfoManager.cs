@@ -104,8 +104,5 @@ public class PlayerInfoManager : MonoBehaviour
         progressText.text += pointString.Substring(0, 3 - pointMinCount);
 
     }
-    private void Update()
-    {
-        
-    }
+
 }
