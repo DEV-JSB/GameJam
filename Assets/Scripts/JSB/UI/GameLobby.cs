@@ -10,6 +10,6 @@ public class GameLobby : MonoBehaviour
 
     private void Start()
     {
-        gameStartButton.onClick.AddListener(() => SceneManager.LoadScene(""));
+        gameStartButton.onClick.AddListener(() => SceneManager.LoadScene("ProtoType"));
     }
 }
