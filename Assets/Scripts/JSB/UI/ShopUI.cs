@@ -18,6 +18,7 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private Button resellTurretButton;
     [SerializeField] private GameObject resellInfoUI;
 
+    [SerializeField] private int towerCreateCoast;
 
     private Vector3 buildSpacePosition;
     private TowerSpace towerSpace;
@@ -46,9 +47,16 @@ public class ShopUI : MonoBehaviour
     {
         //closeShopButton.onClick.AddListener(CloseShop);
         getTurretButton.onClick.AddListener(CreateTurret);
+        resellTurretButton.onClick.AddListener(PopUpSellUI);
         rectTransform = GetComponent<RectTransform>();
     }
 
+    private void PopUpSellUI()
+    {
+        resellInfoUI.SetActive(true);
+        resellInfoUI.GetComponent<SellingUI>().InitSellingUI(towerSpace);
+        this.gameObject.SetActive(false);
+    }
     private void SettingOptionButtons()
     {
         if(false == towerSpace.IsTowerCreated())
@@ -93,21 +101,14 @@ public class ShopUI : MonoBehaviour
 
     private void CreateTurret()
     {
+        if (!PlayerInfoManager.Instance.MoneyCheck(towerCreateCoast))
+            return;
+
         int type = Random.Range((int)TowerType.MELEE, (int)TowerType.END);
         Debug.Log("TowerCreate");
         towerSpace.CreateTower(type);
 
         createProuductionUI.SetActive(true);
+        this.gameObject.SetActive(false);
     }
-
-    private IEnumerator StartGetTurretProdiction()
-    {
-        Debug.Log("연출 시작!");
-        startGetTurretProduction = true;
-        yield return new WaitForSeconds(5f);
-        Debug.Log("연출 끝!");
-        startGetTurretProduction = false;
-    }
-
-
 }

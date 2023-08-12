@@ -16,6 +16,8 @@ public class TowerSpace : MonoBehaviour
     private GameObject tower;
     private TowerType towerType;
 
+    private int investValue;
+    public int InvestValue => investValue;
 
     public bool IsTowerCreated()
     {
@@ -28,7 +30,12 @@ public class TowerSpace : MonoBehaviour
     {
         tower = GameObject.Instantiate(lstTowers[type], this.transform);
     }
-
+    public void DestroyTower()
+    {
+        GameObject.Destroy(tower);
+        tower = null;
+    }
+    
 
 
 }
