@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 6ab9c1ad289aa6a4fbf7f14171ff1967, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: c3845f39589ea6d429ab25e8cccccbde, type: 2}
   initialSkinName: Ottoman
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0

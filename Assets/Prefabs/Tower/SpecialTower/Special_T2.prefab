@@ -58,7 +58,6 @@ MonoBehaviour:
   isAbleToAttack: 0
   speedDecrease: 4
   nearest: {fileID: 0}
-  bullet: {fileID: 8043820099366981255, guid: 925e10da156876944952ed5979e8c4b5, type: 3}
 --- !u!61 &4402483496609567740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105,7 +104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ed5bf05ea14ea2c40b6cda78c43704bb, type: 2}
+  - {fileID: 2100000, guid: c2858a06511881e4a9d53c149bd57b4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 522a4d1dcb1f530409169992d17f0b0a, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 47978a8263c39074eb0999d0d74d9ae3, type: 2}
   initialSkinName: 
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -164,7 +163,7 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: attack
+  _animationName: attack'
   loop: 0
   timeScale: 1
 --- !u!33 &4701022142102461600

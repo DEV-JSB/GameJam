@@ -58,7 +58,6 @@ MonoBehaviour:
   isAbleToAttack: 0
   speedDecrease: 4
   nearest: {fileID: 0}
-  bullet: {fileID: 8043820099366981255, guid: 925e10da156876944952ed5979e8c4b5, type: 3}
 --- !u!61 &4402483496609567740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 8a784f361296ca84c84a8390f72de12a, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 3b2719be2cf88d145bf44f1b45bc459a, type: 2}
   initialSkinName: ottoman3
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
