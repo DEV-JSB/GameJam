@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5871079539569992569}
   - component: {fileID: -3050818772852943698}
   - component: {fileID: 3038634835141868641}
+  - component: {fileID: 8585171638782392540}
   m_Layer: 0
   m_Name: Archer_T2
   m_TagString: Untagged
@@ -161,6 +162,14 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: 
+  _animationName: attack
   loop: 1
   timeScale: 1
+--- !u!33 &8585171638782392540
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871079539569992573}
+  m_Mesh: {fileID: 0}

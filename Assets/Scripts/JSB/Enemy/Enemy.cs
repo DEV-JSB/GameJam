@@ -33,6 +33,7 @@ public abstract class Enemy : MonoBehaviour
     public void HpDecrease(int damage)
     {
         enemyHealth -= damage;
+        StartCoroutine(Damaged());
         //Debug.Log("데미지 받음");
         if(enemyHealth < 0f)
         {
@@ -94,5 +95,14 @@ public abstract class Enemy : MonoBehaviour
         yield return new WaitForSeconds(3f);
         isSlowed = false;
         moveSpeed = originMoveSpeed;
+    }
+
+    IEnumerator Damaged()
+    {
+        Color originColor = this.GetComponentInChildren<SpriteRenderer>().color;
+        this.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        this.GetComponentInChildren<SpriteRenderer>().color = originColor;
+
     }
 }

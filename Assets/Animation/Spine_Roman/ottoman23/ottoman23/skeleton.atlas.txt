@@ -1,0 +1,61 @@
+skeleton.png
+	size: 911, 569
+	filter: Linear, Linear
+	pma: true
+#1_hat
+	bounds: 657, 336, 252, 231
+	offsets: 436, 1062, 1080, 1350
+#2_face
+	bounds: 383, 358, 209, 272
+	offsets: 442, 981, 1080, 1350
+	rotate: 90
+#3_gun
+	bounds: 2, 215, 377, 122
+	offsets: 295, 610, 1080, 1350
+#4_Larm
+	bounds: 659, 81, 91, 91
+	offsets: 556, 902, 1080, 1350
+#5_body
+	bounds: 540, 34, 117, 138
+	offsets: 488, 864, 1080, 1350
+#6_backhat
+	bounds: 270, 5, 208, 268
+	offsets: 476, 964, 1080, 1350
+	rotate: 90
+#7_Rarm
+	bounds: 755, 4, 98, 80
+	offsets: 432, 909, 1080, 1350
+#8_Rleg
+	bounds: 381, 223, 47, 83
+	offsets: 496, 827, 1080, 1350
+	rotate: 90
+#9_Lleg
+	bounds: 477, 267, 56, 89
+	offsets: 540, 828, 1080, 1350
+ottoman_3tier/#1_canon2
+	bounds: 2, 339, 379, 228
+	offsets: 675, 572, 1080, 1350
+ottoman_3tier/#2_hat
+	bounds: 540, 174, 241, 160
+	offsets: 744, 1047, 1080, 1350
+ottoman_3tier/#3_face
+	bounds: 2, 2, 211, 266
+	offsets: 762, 978, 1080, 1350
+	rotate: 90
+ottoman_3tier/#4_Larm
+	bounds: 383, 272, 92, 84
+	offsets: 879, 901, 1080, 1350
+ottoman_3tier/#6_body
+	bounds: 783, 199, 112, 135
+	offsets: 809, 856, 1080, 1350
+ottoman_3tier/#7_Rarm
+	bounds: 659, 2, 94, 77
+	offsets: 757, 904, 1080, 1350
+ottoman_3tier/#8_Lleg
+	bounds: 752, 86, 55, 99
+	offsets: 813, 820, 1080, 1350
+	rotate: 90
+ottoman_3tier/#9_Rleg
+	bounds: 783, 143, 54, 100
+	offsets: 860, 820, 1080, 1350
+	rotate: 90
