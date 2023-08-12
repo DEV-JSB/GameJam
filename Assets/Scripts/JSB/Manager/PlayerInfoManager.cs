@@ -32,7 +32,7 @@ public class PlayerInfoManager : MonoBehaviour
     [SerializeField] private float textUpdateTime;
 
     [SerializeField] private GameObject endingUI;
-    
+
     private int progressPercent;
     public int ProgressPrecent => progressPercent;
     private float distancePercentUnit;
@@ -67,7 +67,7 @@ public class PlayerInfoManager : MonoBehaviour
     {
         float distance = 0f;
         distance += Vector2.Distance(lstRoadRoute[0].position, playerUnit.transform.position);
-        for(int i = 0; i < lstRoadRoute.Count - 1; ++i)
+        for (int i = 0; i < lstRoadRoute.Count - 1; ++i)
         {
             distance += Vector2.Distance(lstRoadRoute[i].position, lstRoadRoute[i + 1].position);
         }
@@ -110,17 +110,22 @@ public class PlayerInfoManager : MonoBehaviour
         money -= cash;
     }
 
+    private void ProgressUpdate()
+    {
+        if (playerUnit.PlayerMovedValue >= pivotPercentUpValue)
+        {
+            pivotPercentUpValue += distancePercentUnit;
+            progressPercent = (int)
+            ++progressPercent;
+        }
+    }
     private void GameProgressUpdate()
     {
+        Debug.Log($"PlayerMoved Value : {playerUnit.PlayerMovedValue}");
         --pointMinCount;
         if (0 > pointMinCount)
         {
             pointMinCount = pointMinPivot;
-        }
-        if(playerUnit.PlayerMovedValue >= pivotPercentUpValue)
-        {
-            pivotPercentUpValue += distancePercentUnit;
-            ++progressPercent;
         }
         progressText.text = $"{defaultText} {progressPercent.ToString()}%";
         progressText.text += pointString.Substring(0, 3 - pointMinCount);
@@ -136,5 +141,6 @@ public class PlayerInfoManager : MonoBehaviour
         }
         else
             textUpdateTimer += Time.deltaTime;
+        ProgressUpdate();
     }
 }

@@ -31,7 +31,7 @@ public class RandomUnitProduceWindow : MonoBehaviour
         lstRandomUnit[randomIndex].SetActive(true);
 
     }
-    private void Start()
+    private void OnEnable()
     {
         Time.timeScale = 0f;
         RandomShow();
@@ -47,10 +47,12 @@ public class RandomUnitProduceWindow : MonoBehaviour
     IEnumerator StartRandomShowing()
     {
         productionTimer = productionTime;
+        float value = 0f;
         while (productionTimer > 0f)
         {
+            value += unscaledTimeCorrectionValue * Time.unscaledDeltaTime;
             yield return new WaitForSecondsRealtime(translateTime);
-            productionTimer -= unscaledTimeCorrectionValue * Time.unscaledDeltaTime;
+            productionTimer -= value;
 
             RandomShow();
         }

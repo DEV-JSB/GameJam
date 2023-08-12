@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Spine.Unity;
 
 public class ShopUI : MonoBehaviour
 {
@@ -109,6 +110,7 @@ public class ShopUI : MonoBehaviour
         if (!PlayerInfoManager.Instance.MoneyCheck(towerCreateCoast))
             return;
 
+        
         int type = Random.Range((int)TowerType.MELEE, (int)TowerType.END);
         int percentage = Random.Range(0, 101);
         int tier = 0;
@@ -134,6 +136,12 @@ public class ShopUI : MonoBehaviour
                 break;
         }
         Debug.Log(tier + " / " + percentage);
+
+        if(randomTower.GetComponent<SkeletonAnimation>() == null)
+        {
+            CreateTurret();
+            return;
+        }
 
         Debug.Log("TowerCreate");
         towerSpace.CreateTower(randomTower);

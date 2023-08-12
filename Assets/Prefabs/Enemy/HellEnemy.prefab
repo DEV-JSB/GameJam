@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cbd169f6882541863db6f443a2c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originMoveSpeed: 1
+  originMoveSpeed: 1.5
   moveSpeed: 1.5
-  attackCooltime: 0
+  attackCooltime: 3
   attackRange: 0.3
   enemyPower: 30
   enemyHealth: 10
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 925002473
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6433ddeed6dc63745a39b9b1e113d179, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

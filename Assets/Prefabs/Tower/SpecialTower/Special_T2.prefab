@@ -122,8 +122,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1800704201
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6364204142332037074
@@ -164,7 +164,7 @@ MonoBehaviour:
   updateTiming: 1
   unscaledTime: 0
   _animationName: attack'
-  loop: 0
+  loop: 1
   timeScale: 1
 --- !u!33 &4701022142102461600
 MeshFilter:
