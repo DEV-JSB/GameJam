@@ -8,10 +8,16 @@ public class RiverPioneer : MonoBehaviour
     [SerializeField] private float moveSpeed;
 
     private List<Transform> lstRoadRoute;
+    // À×???
     public int moveIndex = 0;
 
     private Vector3 direction;
+    private float playerMovedValue;
 
+    private void Start()
+    {
+        playerMovedValue = 0f;
+    }
     public void PlayerInit()
     {
         moveIndex = 0;
@@ -29,6 +35,7 @@ public class RiverPioneer : MonoBehaviour
     {
         Vector3 transform = this.transform.position;
         float moveValue = Time.deltaTime * moveSpeed;
+        playerMovedValue += moveValue;
         this.transform.position = transform + (direction * moveValue);
         ArriveCheck();
     }
