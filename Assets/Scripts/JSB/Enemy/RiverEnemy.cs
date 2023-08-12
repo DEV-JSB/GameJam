@@ -44,7 +44,13 @@ public class RiverEnemy : Enemy
             {
                 this.transform.position = lstRoadRoute[moveIndex].transform.position;
                 ++moveIndex;
+                this.transform.LookAt(lstRoadRoute[moveIndex].transform,Vector3.forward);
                 direction = GetDirection(lstRoadRoute[moveIndex - 1].transform.position, lstRoadRoute[moveIndex].transform.position);
+                
+                
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = rotation;
             }
             else
                 Destroy(this.gameObject);
