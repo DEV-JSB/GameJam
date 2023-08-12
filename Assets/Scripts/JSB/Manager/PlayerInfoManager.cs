@@ -50,6 +50,9 @@ public class PlayerInfoManager : MonoBehaviour
 
     private void Start()
     {
+
+        SoundManager.Instance.PlayInGameSound();
+
         //healthUI.InitHealth(playerMaxHealth);
         playerUnit.PlayerInit();
         healthSlider.maxValue = playerMaxHealth;

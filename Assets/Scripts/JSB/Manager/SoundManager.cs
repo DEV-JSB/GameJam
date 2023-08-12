@@ -47,6 +47,41 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip rulletCompeleteSound;
 
 
+    private void Start()
+    {
+        bgmSource.loop = true;
+        bgmSource.clip = introSound;
+        bgmSource.Play();
+    }
+    public void PlayLobbySound()
+    {
+        bgmSource.loop = true;
+        bgmSource.clip = lobbySound;
+        bgmSource.Play();
+    }
+    public void PlayInGameSound()
+    {
+        bgmSource.loop = true;
+        bgmSource.clip = inGameSound;
+        bgmSource.Play();
+    }
+    public void ButtonClickSound()
+    {
+        effectSource.PlayOneShot(buttonSound);
 
+    }
+    public void SwordAttackSound()
+    {
+        effectSource.PlayOneShot(meleeAttackSound);
+
+    }
+    public void ArcherAttackSound()
+    {
+        effectSource.PlayOneShot(archerAttackSound);
+    }
+    public void SpecialAttackSound()
+    {
+        effectSource.PlayOneShot(specialAttackSound);
+    }
 
 }
