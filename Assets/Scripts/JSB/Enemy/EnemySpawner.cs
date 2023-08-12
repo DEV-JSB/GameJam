@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float normalPivotPercent;
     [SerializeField] private float hardPivotPercent;
 
+    [SerializeField] private float startStagePivot;
 
     private float timer;
 
@@ -73,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
         GameObject createdEnemy = GameObject.Instantiate(lstEnemyPrefabs[type], spawnPoint,Quaternion.identity,null);
-        createdEnemy.transform.Rotate(new Vector3(0,0,90));
+        createdEnemy.transform.Rotate(new Vector3(0,0,-90));
         createdEnemy.GetComponent<Enemy>().SettingEnemyInfo(player);
     }
 
@@ -83,6 +84,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerInfoManager.Instance.ProgressPrecent <= startStagePivot)
+            return;
         if (timer >= spawnCoolTime)
         {
             for(int i = 0; i < spawnCount; ++i)

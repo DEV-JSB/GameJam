@@ -19,6 +19,7 @@ public class MeleeTower : Tower
     }
     protected override void Attack(Collider2D[] cols)
     {
+        SoundManager.Instance.SwordAttackSound();
         foreach (Collider2D col in cols)
         {
             if(col !=null)

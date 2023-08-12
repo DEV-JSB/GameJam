@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine.UI;
 
 public class RandomUnitProduceWindow : MonoBehaviour
 {
+
+    public Action productionFInish;
+
     [SerializeField] private List<GameObject> lstRandomUnit;
 
     [SerializeField] private float unscaledTimeCorrectionValue;
@@ -22,7 +26,7 @@ public class RandomUnitProduceWindow : MonoBehaviour
     {
         if (null != prevShowedObject)
             prevShowedObject.SetActive(false);
-        randomIndex = Random.Range(0, lstRandomUnit.Count);
+        randomIndex = UnityEngine.Random.Range(0, lstRandomUnit.Count);
         prevShowedObject = lstRandomUnit[randomIndex];
         lstRandomUnit[randomIndex].SetActive(true);
 
@@ -53,6 +57,7 @@ public class RandomUnitProduceWindow : MonoBehaviour
         this.gameObject.SetActive(false);
         Time.timeScale = 1f;
         buttonUI.gameObject.SetActive(true);
+        productionFInish();
     }
 
 }

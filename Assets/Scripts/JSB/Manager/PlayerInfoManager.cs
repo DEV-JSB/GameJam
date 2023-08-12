@@ -24,12 +24,15 @@ public class PlayerInfoManager : MonoBehaviour
     [SerializeField] private int playerMaxHealth;
     [SerializeField] private TextMeshProUGUI progressText;
     private int health;
-    
-    private int money;
+
+    [SerializeField] private int money;
 
     // For ProgressUI
     [SerializeField] private string defaultText;
     [SerializeField] private float textUpdateTime;
+
+    [SerializeField] private GameObject endingUI;
+    
     private int progressPercent;
     public int ProgressPrecent => progressPercent;
     private float distancePercentUnit;
@@ -63,10 +66,10 @@ public class PlayerInfoManager : MonoBehaviour
     private void CaculateDistanceUnit()
     {
         float distance = 0f;
-        distance += Vector3.Distance(lstRoadRoute[0].position, playerUnit.transform.position);
+        distance += Vector2.Distance(lstRoadRoute[0].position, playerUnit.transform.position);
         for(int i = 0; i < lstRoadRoute.Count - 1; ++i)
         {
-            distance += Vector3.Distance(lstRoadRoute[i].position, lstRoadRoute[i + 1].position);
+            distance += Vector2.Distance(lstRoadRoute[i].position, lstRoadRoute[i + 1].position);
         }
         distancePercentUnit = distance / 100f;
     }
@@ -121,6 +124,8 @@ public class PlayerInfoManager : MonoBehaviour
         }
         progressText.text = $"{defaultText} {progressPercent.ToString()}%";
         progressText.text += pointString.Substring(0, 3 - pointMinCount);
+        if (progressPercent >= 97)
+            endingUI.SetActive(true);
     }
     private void Update()
     {

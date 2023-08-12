@@ -898,6 +898,10 @@ MonoBehaviour:
   turretInfoUI: {fileID: 275430004}
   resellTurretButton: {fileID: 195819884}
   resellInfoUI: {fileID: 840617429}
+  towerCreateCoast: 0
+  meleeList: []
+  archerList: []
+  specialList: []
 --- !u!1001 &230158332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5414,7 +5418,9 @@ MonoBehaviour:
   healthSlider: {fileID: 261635145}
   playerMaxHealth: 5
   progressText: {fileID: 0}
+  money: 0
   defaultText: 
+  textUpdateTime: 0
 --- !u!4 &1184232645
 Transform:
   m_ObjectHideFlags: 0
@@ -7475,6 +7481,9 @@ MonoBehaviour:
   spawnCount: 1
   range: 0
   spawnCoolTime: 1
+  normalPivotPercent: 0
+  hardPivotPercent: 0
+  startStagePivot: 0
 --- !u!4 &1990273738
 Transform:
   m_ObjectHideFlags: 0

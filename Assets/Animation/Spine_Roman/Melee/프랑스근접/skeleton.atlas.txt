@@ -1,0 +1,94 @@
+skeleton.png
+	size: 1674, 359
+	filter: Linear, Linear
+	pma: true
+#1_helmet
+	bounds: 2, 45, 255, 312
+	offsets: 114, 1005, 1080, 1350
+#2_head
+	bounds: 786, 102, 255, 204
+	offsets: 108, 997, 1080, 1350
+	rotate: 90
+#3_body
+	bounds: 1295, 9, 111, 125
+	offsets: 179, 894, 1080, 1350
+	rotate: 90
+#4_R_arm
+	bounds: 466, 6, 88, 74
+	offsets: 128, 927, 1080, 1350
+#5_sword
+	bounds: 160, 7, 36, 202
+	offsets: 70, 911, 1080, 1350
+	rotate: 90
+#6_LeftArm
+	bounds: 650, 4, 83, 79
+	offsets: 257, 921, 1080, 1350
+#7_RLeg
+	bounds: 80, 4, 39, 78
+	offsets: 189, 844, 1080, 1350
+	rotate: 90
+#8_LLeg
+	bounds: 2, 2, 41, 76
+	offsets: 239, 846, 1080, 1350
+	rotate: 90
+france_1/1_head
+	bounds: 259, 56, 191, 301
+	offsets: 78, 985, 1080, 1350
+france_1/2_Larm
+	bounds: 1184, 6, 109, 113
+	offsets: 189, 893, 1080, 1350
+france_1/3_body
+	bounds: 825, 2, 98, 140
+	offsets: 125, 885, 1080, 1350
+	rotate: 90
+france_1/4_Rarm
+	bounds: 1080, 3, 102, 116
+	offsets: 53, 892, 1080, 1350
+france_1/5_sword
+	bounds: 452, 82, 118, 275
+	offsets: 119, 509, 1080, 1350
+france_1/6_Lleg
+	bounds: 1577, 97, 59, 89
+	offsets: 176, 825, 1080, 1350
+	rotate: 90
+france_1/7_Rleg
+	bounds: 556, 10, 70, 92
+	offsets: 106, 822, 1080, 1350
+	rotate: 90
+france_1/8_tail
+	bounds: 1422, 2, 153, 154
+	offsets: 163, 898, 1080, 1350
+ottoman_1tier/#10_Lleg
+	bounds: 1576, 213, 55, 93
+	offsets: 220, 825, 1080, 1350
+	rotate: 90
+ottoman_1tier/#1_feather
+	bounds: 992, 121, 236, 210
+	offsets: 118, 1121, 1080, 1350
+	rotate: 90
+ottoman_1tier/#2_helmet
+	bounds: 1204, 122, 215, 235
+	offsets: 118, 988, 1080, 1350
+ottoman_1tier/#3_face
+	bounds: 572, 85, 212, 272
+	offsets: 122, 978, 1080, 1350
+ottoman_1tier/#4_muffler
+	bounds: 364, 6, 100, 48
+	offsets: 173, 950, 1080, 1350
+ottoman_1tier/#5_Larm
+	bounds: 1576, 270, 96, 87
+	offsets: 233, 898, 1080, 1350
+ottoman_1tier/#6_body
+	bounds: 967, 2, 98, 111
+	offsets: 175, 868, 1080, 1350
+	rotate: 90
+ottoman_1tier/#7_Rarm
+	bounds: 735, 14, 88, 69
+	offsets: 116, 908, 1080, 1350
+ottoman_1tier/#8_sword
+	bounds: 1421, 176, 153, 181
+	offsets: 140, 618, 1080, 1350
+ottoman_1tier/#9_Rleg
+	bounds: 1576, 158, 53, 92
+	offsets: 172, 827, 1080, 1350
+	rotate: 90

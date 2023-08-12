@@ -12,6 +12,8 @@ public enum TowerType
 }
 public class TowerSpace : MonoBehaviour
 {
+    [SerializeField] private RandomUnitProduceWindow produceWindow;
+    [SerializeField] private SpriteRenderer spaceRenderer;
     private GameObject tower;
     private TowerType towerType;
 
@@ -28,10 +30,20 @@ public class TowerSpace : MonoBehaviour
     public void CreateTower(GameObject ramdomTower)
     {
         tower = GameObject.Instantiate(ramdomTower, this.transform);
+        spaceRenderer.enabled = false;
+        tower.SetActive(false);
+        produceWindow.productionFInish = null;
+        produceWindow.productionFInish += () => tower.SetActive(true);
     }
+    public void SettingTowerOn()
+    {
+        tower.SetActive(true);
+    }
+
     public void DestroyTower()
     {
         GameObject.Destroy(tower);
+        spaceRenderer.enabled = false;
         tower = null;
     }
     
