@@ -9,7 +9,7 @@ public class Tower : MonoBehaviour
     [SerializeField]float attackSpeed;
     [SerializeField] LayerMask enemyLayerMask;
     [SerializeField] Collider2D[] colss;
-    [SerializeField] protected bool isCoolTime;
+    [SerializeField] protected bool isAbleToAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         
     }
 
     protected  virtual void Attack(Collider2D[] cols)
@@ -28,7 +28,7 @@ public class Tower : MonoBehaviour
     }
     protected void SurchEnemy()
     {
-        if (isCoolTime == false)
+        if (isAbleToAttack == false)
             return;
         Collider2D[] cols = Physics2D.OverlapCircleAll(this.transform.position, attackRange, enemyLayerMask);
         if (cols.Length > 0)
@@ -46,11 +46,12 @@ public class Tower : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, attackRange);
+        
     }
     IEnumerator AttackCor()
     {
-        isCoolTime = false;
+        isAbleToAttack = false;
         yield return new WaitForSeconds(attackSpeed);
-        isCoolTime = true;
+        isAbleToAttack = true;
     }
 }

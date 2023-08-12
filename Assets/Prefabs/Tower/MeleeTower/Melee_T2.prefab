@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  attackRange: 2
+  attackRange: 1
   attackSpeed: 0.4
   enemyLayerMask:
     serializedVersion: 2

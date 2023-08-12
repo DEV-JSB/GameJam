@@ -10,18 +10,24 @@ enum EnemyType
 
 public abstract class Enemy : MonoBehaviour
 {
+    [SerializeField] protected float originMoveSpeed;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float attackCooltime;
     [SerializeField] protected float attackRange;
     [SerializeField] protected int enemyPower;
     [SerializeField] private int enemyHealth;
     [SerializeField] private int money;
+
+    [SerializeField] bool isSlowed;
     protected Transform playerPosition;
 
     private float attackCoolTimer;
     public abstract void Attack();  
     public abstract void EnemyMove();
-
+    private void Start()
+    {
+        isSlowed = false;
+    }
     public void HpDecrease(int damage)
     {
         enemyHealth -= damage;
@@ -32,7 +38,18 @@ public abstract class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
+    public void SpeedDecrease(int decrease)
+    {
+        if(isSlowed == false)
+        {
+            moveSpeed = moveSpeed - moveSpeed / decrease;
+        }
+        isSlowed = true;
+        
+        StopCoroutine(SlowTime());
+        StartCoroutine(SlowTime());
+        
+    }
     public void SettingEnemyInfo(Transform playerTrans)
     {
         playerPosition = playerTrans;
@@ -68,5 +85,12 @@ public abstract class Enemy : MonoBehaviour
             else
                 attackCoolTimer += Time.deltaTime;
         }
+    }
+
+    IEnumerator SlowTime()
+    {
+        yield return new WaitForSeconds(3f);
+        isSlowed = false;
+        moveSpeed = originMoveSpeed;
     }
 }

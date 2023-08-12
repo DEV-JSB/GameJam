@@ -48,7 +48,7 @@ public class RiverLine : MonoBehaviour
         else
         {
             this.lineRenderer.SetPosition(lineRenderer.positionCount - 1, player.transform.position);
-            Debug.Log(lineRenderer.positionCount);
+            //Debug.Log(lineRenderer.positionCount);
         }
         //this.lineRenderer.positionCount = player.GetComponent<RiverPioneer>().moveIndex + 1;
 

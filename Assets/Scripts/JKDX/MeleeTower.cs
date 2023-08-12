@@ -9,7 +9,7 @@ public class MeleeTower : Tower
     // Start is called before the first frame update
     void Start()
     {
-        isCoolTime = true;
+        this.isAbleToAttack = true;
     }
 
     // Update is called once per frame
