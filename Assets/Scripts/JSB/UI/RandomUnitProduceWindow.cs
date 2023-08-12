@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomUnitProduceWindow : MonoBehaviour
 {
     [SerializeField] private List<GameObject> lstRandomUnit;
 
+    [SerializeField] private float unscaledTimeCorrectionValue;
     [SerializeField] private float productionTime;
     [SerializeField] private float translateTime;
 
+    [SerializeField] private Button buttonUI;
     private GameObject prevShowedObject;
     private int randomIndex;
 
@@ -26,8 +29,15 @@ public class RandomUnitProduceWindow : MonoBehaviour
     }
     private void Start()
     {
+        Time.timeScale = 0f;
         RandomShow();
         StartCoroutine(nameof(StartRandomShowing));
+        buttonUI.onClick.AddListener(
+            () => {
+                this.gameObject.SetActive(false);
+                buttonUI.gameObject.SetActive(false);
+            });
+
     }
 
     IEnumerator StartRandomShowing()
@@ -36,10 +46,13 @@ public class RandomUnitProduceWindow : MonoBehaviour
         while (productionTimer > 0f)
         {
             yield return new WaitForSecondsRealtime(translateTime);
-            productionTimer -= Time.deltaTime;
+            productionTimer -= unscaledTimeCorrectionValue * Time.unscaledDeltaTime;
 
             RandomShow();
         }
+        this.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        buttonUI.gameObject.SetActive(true);
     }
 
 }
