@@ -5,6 +5,8 @@ using UnityEngine;
 enum EnemyType
 {
     ET_NORMAL,
+    ET_HARD,
+    ET_HELL,
     END
 }
 

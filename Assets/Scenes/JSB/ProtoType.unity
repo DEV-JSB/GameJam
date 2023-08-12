@@ -6217,7 +6217,7 @@ MonoBehaviour:
   playerUnit: {fileID: 2132057929}
   moneyUI: {fileID: 1405009294}
   healthSlider: {fileID: 1534773753}
-  playerMaxHealth: 5
+  playerMaxHealth: 500
   progressText: {fileID: 1672828102}
   defaultText: 'Making Sua Canal '
   textUpdateTime: 0.5
@@ -6634,12 +6634,14 @@ MonoBehaviour:
   player: {fileID: 2132057928}
   lstEnemyPrefabs:
   - {fileID: 1578134063281401276, guid: 01381e315e178034a852227c6bc09476, type: 3}
-  - {fileID: 1578134063281401276, guid: dae2e406788dbe94abefa8484d51db72, type: 3}
   - {fileID: 1578134063281401276, guid: 33beeddfb47db4445b5f7fface985870, type: 3}
+  - {fileID: 1578134063281401276, guid: dae2e406788dbe94abefa8484d51db72, type: 3}
   spawnPivot: 0
   spawnCount: 1
   range: 0
   spawnCoolTime: 1
+  normalPivotPercent: 40
+  hardPivotPercent: 60
 --- !u!4 &1888825897
 Transform:
   m_ObjectHideFlags: 0

@@ -40,13 +40,17 @@ public class EnemySpawner : MonoBehaviour
         int type = 0;
         float percent = PlayerInfoManager.Instance.ProgressPrecent;
         if(percent > hardPivotPercent)
-        { 
-        }
-        else if(percent > normalPivotPercent)
-        { }
-        else
         {
             type = Random.Range(0, (int)EnemyType.END);
+        }
+        else if(percent > normalPivotPercent)
+        {
+            type = Random.Range(0, (int)EnemyType.ET_HELL);
+
+        }
+        else
+        {
+            type = Random.Range(0, (int)EnemyType.ET_NORMAL);
         }
         return type;
     }
