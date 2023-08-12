@@ -6539,6 +6539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lstRoadRoute:
+  - {fileID: 3682200315341965278}
   - {fileID: 3682200313910731080}
   - {fileID: 3682200315097176163}
   - {fileID: 3682200313813711977}
@@ -8344,7 +8345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0f4c4697417ec47be1b1418422e82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 0.1
+  minDistance: 0.05
 --- !u!1 &3682200313696177805
 GameObject:
   m_ObjectHideFlags: 0

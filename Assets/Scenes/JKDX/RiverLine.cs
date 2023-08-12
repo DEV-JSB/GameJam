@@ -31,18 +31,24 @@ public class RiverLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Vector3.Distance(PlayerInfoManager.Instance.LstRoadRoute[player.GetComponent<RiverPioneer>().moveIndex].position,player.transform.position) < 1f)
         {
+            
             if (Vector3.Distance(player.transform.position, previousPosition) > minDistance)
             {
-                lineRenderer.positionCount++;
-                lineRenderer.SetPosition(lineRenderer.positionCount - 1, player.transform.position);
-                previousPosition = player.transform.position;
+                if (player.GetComponent<RiverPioneer>().moveIndex > 0)
+                {
+                    lineRenderer.positionCount++;
+                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, player.transform.position);
+                    previousPosition = player.transform.position;
+                }
             }
         }
         else
         {
             this.lineRenderer.SetPosition(lineRenderer.positionCount - 1, player.transform.position);
+            Debug.Log(lineRenderer.positionCount);
         }
         //this.lineRenderer.positionCount = player.GetComponent<RiverPioneer>().moveIndex + 1;
 
