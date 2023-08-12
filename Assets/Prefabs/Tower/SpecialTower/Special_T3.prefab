@@ -58,6 +58,7 @@ MonoBehaviour:
   isAbleToAttack: 0
   speedDecrease: 4
   nearest: {fileID: 0}
+  bullet: {fileID: 8043820099366981255, guid: 925e10da156876944952ed5979e8c4b5, type: 3}
 --- !u!61 &4402483496609567740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,7 +105,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f691675c1cb94f84980ea1152c01564c, type: 2}
+  - {fileID: 2100000, guid: 371b66003caa28e4c94d16944419b6c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 4f020f7b1e913c945b753d2dc8a9cf5e, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 8a784f361296ca84c84a8390f72de12a, type: 2}
   initialSkinName: ottoman3
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0

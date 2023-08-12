@@ -27,6 +27,7 @@ public class ArcherTower : Tower
             {
                 nearestDis = dis;
                 nearest = cols[i];
+                
             }
             else if (dis < nearestDis)
             {
@@ -41,4 +42,5 @@ public class ArcherTower : Tower
             //Debug.Log("화살공격");
         }
     }
+
 }
