@@ -11,12 +11,14 @@ enum EnemyType
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed;
-
+    [SerializeField] protected float attackCooltime;
     [SerializeField] protected float attackRange;
+    [SerializeField] protected int enemyPower;
     [SerializeField] private int enemyHealth;
-
+    [SerializeField] private int money;
     protected Transform playerPosition;
 
+    private float attackCoolTimer;
     public abstract void Attack();  
     public abstract void EnemyMove();
 
@@ -26,7 +28,8 @@ public abstract class Enemy : MonoBehaviour
         Debug.Log("데미지 받음");
         if(enemyHealth < 0f)
         {
-           
+            PlayerInfoManager.Instance.IncreaseMoney(money);
+            Destroy(this.gameObject);
         }
     }
 
@@ -53,6 +56,17 @@ public abstract class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        EnemyMove();
+        if (false == AttackRangeCheck())
+            EnemyMove();
+        else
+        {
+            if (attackCoolTimer >= attackCooltime)
+            {
+                attackCoolTimer = 0f;
+                Attack();
+            }
+            else
+                attackCoolTimer += Time.deltaTime;
+        }
     }
 }

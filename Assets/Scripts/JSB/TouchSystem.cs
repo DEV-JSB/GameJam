@@ -28,9 +28,10 @@ public class TouchSystem : MonoBehaviour
 
             if (hit)
             {
-                if (hit.rigidbody.gameObject.CompareTag("TurretSpace"))
+                GameObject obj = hit.rigidbody.gameObject;
+                if (obj.CompareTag("TurretSpace"))
                 {
-                    shopUI.SettingPosition(hit.rigidbody.gameObject.transform.position);
+                    shopUI.InitShop(obj.GetComponent<TowerSpace>(), obj.transform.position);
                     shopUI.gameObject.SetActive(true);
                     popUpingShop = true;
                 }
