@@ -21,7 +21,10 @@ public class MeleeTower : Tower
     {
         foreach (Collider2D col in cols)
         {
-            col.GetComponent<Enemy>().HpDecrease(damage);
+            if(col !=null)
+            {
+                col.GetComponent<Enemy>().HpDecrease(damage);
+            }
             Debug.Log("meleeAttack");
         }
     }
