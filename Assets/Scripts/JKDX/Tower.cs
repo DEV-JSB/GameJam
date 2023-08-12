@@ -44,8 +44,6 @@ public class Tower : MonoBehaviour
         {
             if (this.GetComponent<SkeletonAnimation>() != null)
                 this.GetComponent<SkeletonAnimation>().AnimationName = "idle";
-
-
         }
     }
     protected void upgrade()
@@ -67,6 +65,6 @@ public class Tower : MonoBehaviour
 
     protected virtual void SetAnimation()
     {
-       
+        this.GetComponent<SkeletonAnimation>().AnimationName = "attack";
     }
 }
