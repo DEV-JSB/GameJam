@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class PlayerInfoManager : MonoBehaviour
 {
     static private PlayerInfoManager instance;
@@ -22,12 +22,21 @@ public class PlayerInfoManager : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     //[SerializeField] private HealthUI healthUI;
     [SerializeField] private int playerMaxHealth;
+    [SerializeField] private TextMeshProUGUI progressText;
     private int health;
     
     private int money;
 
+    // For ProgressUI
+    private int progressPercent;
+    private float distancePercentUnit;
+    [SerializeField] private string defaultText;
+    private int pointMinCount = 3;
+    private string pointString = "...";
+
     private void Awake()
     {
+        progressPercent = 0;
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
@@ -38,6 +47,18 @@ public class PlayerInfoManager : MonoBehaviour
         playerUnit.PlayerInit();
         healthSlider.maxValue = playerMaxHealth;
         healthSlider.value = playerMaxHealth;
+        CaculateDistanceUnit();
+    }
+
+    private void CaculateDistanceUnit()
+    {
+        float distance = 0f;
+        distance += Vector3.Distance(lstRoadRoute[0].position, playerUnit.transform.position);
+        for(int i = 0; i < lstRoadRoute.Count - 1; ++i)
+        {
+            distance += Vector3.Distance(lstRoadRoute[i].position, lstRoadRoute[i + 1].position);
+        }
+        distancePercentUnit = distance / 100f;
     }
     public void DecreaseHealth(int value)
     {
@@ -74,5 +95,17 @@ public class PlayerInfoManager : MonoBehaviour
     {
         moneyUI.UpdateMoneyText(money);
         money -= cash;
+    }
+
+    private void GameProgressUpdate()
+    {
+        string text = defaultText.Substring(0, defaultText.Length - pointMinCount);
+        progressText.text = $"{text} {progressPercent.ToString()}%";
+        progressText.text += pointString.Substring(0, 3 - pointMinCount);
+
+    }
+    private void Update()
+    {
+        
     }
 }
