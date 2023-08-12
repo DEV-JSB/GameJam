@@ -6,7 +6,6 @@ public class SpecialTower : Tower
 {
     [SerializeField]int speedDecrease;
     [SerializeField] Collider2D nearest;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,4 +42,6 @@ public class SpecialTower : Tower
             //nearest.GetComponent<Enemy>().sp
         }
     }
+
+
 }
