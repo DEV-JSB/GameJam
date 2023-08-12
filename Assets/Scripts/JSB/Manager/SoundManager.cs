@@ -14,6 +14,11 @@ public class SoundManager : MonoBehaviour
             return instance;
         }
     }
+    private void Awake()
+    {
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource effectSource;
