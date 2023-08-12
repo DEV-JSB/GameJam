@@ -50,8 +50,8 @@ MonoBehaviour:
   moveSpeed: 1.5
   attackCooltime: 0
   attackRange: 0.3
-  enemyPower: 0
-  enemyHealth: 10
+  enemyPower: 5
+  enemyHealth: 100
   money: 5
   isSlowed: 0
 --- !u!61 &7928410024072084089

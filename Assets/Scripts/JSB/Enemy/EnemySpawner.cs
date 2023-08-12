@@ -6,7 +6,9 @@ public class EnemySpawner : MonoBehaviour
 {
     enum EnemySawpnType
     {
-        OUTSIDE,
+        EASY,
+        NORMAL,
+        HARD,
         RIVER,
     }
     enum SpawnPivot
@@ -15,7 +17,6 @@ public class EnemySpawner : MonoBehaviour
         SP_ROW,
         SP_COLUM,
     }
-
 
     [SerializeField] private Transform player;
     [Header("적이 증가한다면 타입에 맞춰서 적 프리펩을 넣어야함")]
@@ -26,11 +27,33 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float spawnCoolTime;
 
+
+    [SerializeField] private float normalPivotPercent;
+    [SerializeField] private float hardPivotPercent;
+
+
     private float timer;
+
+
+    private int GetEnemyType()
+    {
+        int type = 0;
+        float percent = PlayerInfoManager.Instance.ProgressPrecent;
+        if(percent > hardPivotPercent)
+        { 
+        }
+        else if(percent > normalPivotPercent)
+        { }
+        else
+        {
+            type = Random.Range(0, (int)EnemyType.END);
+        }
+        return type;
+    }
 
     private void CreateEnemy()
     {
-        int type = Random.Range(0, (int)EnemyType.END);
+        int type = GetEnemyType();
 
         float correctionValue = Random.Range(-range, range); 
         Vector3 spawnPoint = this.transform.position;

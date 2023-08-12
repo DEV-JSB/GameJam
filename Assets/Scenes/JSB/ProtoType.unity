@@ -3265,7 +3265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1109223514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6634,6 +6634,8 @@ MonoBehaviour:
   player: {fileID: 2132057928}
   lstEnemyPrefabs:
   - {fileID: 1578134063281401276, guid: 01381e315e178034a852227c6bc09476, type: 3}
+  - {fileID: 1578134063281401276, guid: dae2e406788dbe94abefa8484d51db72, type: 3}
+  - {fileID: 1578134063281401276, guid: 33beeddfb47db4445b5f7fface985870, type: 3}
   spawnPivot: 0
   spawnCount: 1
   range: 0

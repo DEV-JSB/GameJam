@@ -31,6 +31,7 @@ public class PlayerInfoManager : MonoBehaviour
     [SerializeField] private string defaultText;
     [SerializeField] private float textUpdateTime;
     private int progressPercent;
+    public int ProgressPrecent => progressPercent;
     private float distancePercentUnit;
     private float pivotPercentUpValue;
     private int pointMinPivot = 3;
