@@ -38,7 +38,7 @@ public class ArcherTower : Tower
         if(nearest != null)
         {
             nearest.GetComponent<Enemy>().HpDecrease(damage);
-            Debug.Log("화살공격");
+            //Debug.Log("화살공격");
         }
     }
 }

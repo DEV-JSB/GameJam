@@ -31,7 +31,7 @@ public abstract class Enemy : MonoBehaviour
     public void HpDecrease(int damage)
     {
         enemyHealth -= damage;
-        Debug.Log("데미지 받음");
+        //Debug.Log("데미지 받음");
         if(enemyHealth < 0f)
         {
             PlayerInfoManager.Instance.IncreaseMoney(money);

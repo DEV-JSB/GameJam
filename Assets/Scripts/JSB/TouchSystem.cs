@@ -35,7 +35,7 @@ public class TouchSystem : MonoBehaviour
             {
                 if (popUpingShop && prevTouchedSpace != obj)
                 {
-                    Debug.Log("Other Hit PopUp");
+                    //Debug.Log("Other Hit PopUp");
                     shopUI.gameObject.SetActive(false);
                     popUpingShop = false;
                     return;

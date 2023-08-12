@@ -54,4 +54,9 @@ public class Tower : MonoBehaviour
         yield return new WaitForSeconds(attackSpeed);
         isAbleToAttack = true;
     }
+
+    protected virtual void SetAnimation()
+    {
+       
+    }
 }

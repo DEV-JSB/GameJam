@@ -12,7 +12,6 @@ public enum TowerType
 }
 public class TowerSpace : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> lstTowers;
     private GameObject tower;
     private TowerType towerType;
 
@@ -26,9 +25,9 @@ public class TowerSpace : MonoBehaviour
         else
             return false;
     }
-    public void CreateTower(int type)
+    public void CreateTower(GameObject ramdomTower)
     {
-        tower = GameObject.Instantiate(lstTowers[type], this.transform);
+        tower = GameObject.Instantiate(ramdomTower, this.transform);
     }
     public void DestroyTower()
     {

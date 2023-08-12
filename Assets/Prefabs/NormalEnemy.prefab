@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originMoveSpeed: 1
-  moveSpeed: 1
+  moveSpeed: 1.5
   attackCooltime: 0
   attackRange: 0.3
   enemyPower: 0

@@ -20,6 +20,11 @@ public class ShopUI : MonoBehaviour
 
     [SerializeField] private int towerCreateCoast;
 
+    [SerializeField] private List<GameObject> meleeList;
+    [SerializeField] private List<GameObject> archerList;
+    [SerializeField] private List<GameObject> specialList;
+
+
     private Vector3 buildSpacePosition;
     private TowerSpace towerSpace;
     private bool startGetTurretProduction;
@@ -105,8 +110,33 @@ public class ShopUI : MonoBehaviour
             return;
 
         int type = Random.Range((int)TowerType.MELEE, (int)TowerType.END);
+        int percentage = Random.Range(0, 101);
+        int tier = 0;
+        if(percentage <= 50) { tier = 0; }
+        else if ( 50 < percentage && percentage <= 83) { tier = 1; }
+        else if (83 < percentage && percentage <= 95) { tier = 2; }
+        else if (95 < percentage && percentage <= 100) { tier = 3; }
+
+        GameObject randomTower;
+        switch(type)
+        {
+            case 0 :
+                randomTower = meleeList[tier].gameObject;
+                break;
+            case 1:
+                randomTower = archerList[tier].gameObject;
+                break;
+            case 2:
+                randomTower = specialList[tier].gameObject;
+                break;
+            default:
+                randomTower = meleeList[tier].gameObject;
+                break;
+        }
+        Debug.Log(tier + " / " + percentage);
+
         Debug.Log("TowerCreate");
-        towerSpace.CreateTower(type);
+        towerSpace.CreateTower(randomTower);
 
         createProuductionUI.SetActive(true);
         this.gameObject.SetActive(false);
