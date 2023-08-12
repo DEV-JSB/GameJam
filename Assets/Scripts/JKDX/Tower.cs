@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Spine.Unity;
 public class Tower : MonoBehaviour
 {
     [SerializeField] protected int damage;
@@ -36,6 +36,14 @@ public class Tower : MonoBehaviour
             colss = cols;
             Attack(cols);
             StartCoroutine(AttackCor());
+            if(this.GetComponent<SkeletonAnimation>() != null)
+                this.GetComponent<SkeletonAnimation>().AnimationName = "attack";
+
+        }
+        else
+        {
+            if (this.GetComponent<SkeletonAnimation>() != null)
+                this.GetComponent<SkeletonAnimation>().AnimationName = "idle";
         }
     }
     protected void upgrade()
@@ -57,6 +65,6 @@ public class Tower : MonoBehaviour
 
     protected virtual void SetAnimation()
     {
-       
+        this.GetComponent<SkeletonAnimation>().AnimationName = "attack";
     }
 }

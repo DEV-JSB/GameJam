@@ -73,6 +73,7 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
         GameObject createdEnemy = GameObject.Instantiate(lstEnemyPrefabs[type], spawnPoint,Quaternion.identity,null);
+        createdEnemy.transform.Rotate(new Vector3(0,0,90));
         createdEnemy.GetComponent<Enemy>().SettingEnemyInfo(player);
     }
 
