@@ -13,7 +13,7 @@ public class RiverPioneer : MonoBehaviour
 
     private Vector3 direction;
     private float playerMovedValue;
-
+    public float PlayerMovedValue => playerMovedValue;
     private void Start()
     {
         playerMovedValue = 0f;
