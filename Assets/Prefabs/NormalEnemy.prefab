@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cbd169f6882541863db6f443a2c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 1
   attackCooltime: 0
   attackRange: 0.3
   enemyPower: 0

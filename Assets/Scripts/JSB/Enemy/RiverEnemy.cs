@@ -35,7 +35,9 @@ public class RiverEnemy : Enemy
     private void ArriveCheck()
     {
         // 트랜스폼 직접적으로 접근하는게 좋지 않을 것 같음
-        float distance = Vector3.Distance(this.transform.position, lstRoadRoute[moveIndex].transform.position);
+        Vector3 pos = this.transform.position;
+        
+        float distance = Vector2.Distance(pos, lstRoadRoute[moveIndex].transform.position);
         if(distance <= 0.1f)
         {
             if (moveIndex + 1 < lstRoadRoute.Count)
