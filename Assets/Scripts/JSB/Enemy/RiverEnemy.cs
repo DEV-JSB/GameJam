@@ -21,7 +21,7 @@ public class RiverEnemy : Enemy
     }
     public override void Attack()
     {
-
+        PlayerInfoManager.Instance.DecreaseHealth(enemyPower);
     }
 
     public override void EnemyMove()

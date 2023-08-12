@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInfoManager : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class PlayerInfoManager : MonoBehaviour
     public List<Transform> LstRoadRoute => lstRoadRoute;
     [SerializeField] public RiverPioneer playerUnit;
     [SerializeField] private MoneyUI moneyUI;
-    [SerializeField] private HealthUI healthUI;
+    [SerializeField] private Slider healthSlider;
+    //[SerializeField] private HealthUI healthUI;
     [SerializeField] private int playerMaxHealth;
     private int health;
     
@@ -32,8 +34,10 @@ public class PlayerInfoManager : MonoBehaviour
 
     private void Start()
     {
-        healthUI.InitHealth(playerMaxHealth);
+        //healthUI.InitHealth(playerMaxHealth);
         playerUnit.PlayerInit();
+        healthSlider.maxValue = playerMaxHealth;
+        healthSlider.value = playerMaxHealth;
     }
     public void DecreaseHealth(int value)
     {
@@ -45,7 +49,8 @@ public class PlayerInfoManager : MonoBehaviour
         else
             health -= value;
 
-        healthUI.UpdateHealthInfo(health, playerMaxHealth);
+        healthSlider.value = health;
+        //healthUI.UpdateHealthInfo(health, playerMaxHealth);
     }
 
     public void IncreaseMoney(int cash)
