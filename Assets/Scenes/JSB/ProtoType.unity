@@ -6320,8 +6320,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6557,8 +6557,9 @@ MonoBehaviour:
   moneyUI: {fileID: 1405009294}
   healthSlider: {fileID: 1534773753}
   playerMaxHealth: 5
-  progressText: {fileID: 0}
-  defaultText: 
+  progressText: {fileID: 1672828102}
+  defaultText: 'Making Sua Canal '
+  textUpdateTime: 0.5
 --- !u!1001 &1817257080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8267,7 +8268,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Positions: []
   m_Parameters:
     serializedVersion: 3

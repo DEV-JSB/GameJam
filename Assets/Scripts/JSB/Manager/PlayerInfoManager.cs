@@ -28,15 +28,21 @@ public class PlayerInfoManager : MonoBehaviour
     private int money;
 
     // For ProgressUI
+    [SerializeField] private string defaultText;
+    [SerializeField] private float textUpdateTime;
     private int progressPercent;
     private float distancePercentUnit;
-    [SerializeField] private string defaultText;
-    private int pointMinCount = 3;
+    private float pivotPercentUpValue;
+    private int pointMinPivot = 3;
+    private int pointMinCount;
     private string pointString = "...";
+    private float textUpdateTimer = 0f;
 
     private void Awake()
     {
+        pointMinCount = pointMinPivot;
         progressPercent = 0;
+        pivotPercentUpValue = 0;
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
@@ -99,10 +105,27 @@ public class PlayerInfoManager : MonoBehaviour
 
     private void GameProgressUpdate()
     {
-        string text = defaultText.Substring(0, defaultText.Length - pointMinCount);
-        progressText.text = $"{text} {progressPercent.ToString()}%";
+        --pointMinCount;
+        if (0 > pointMinCount)
+        {
+            pointMinCount = pointMinPivot;
+        }
+        if(playerUnit.PlayerMovedValue >= pivotPercentUpValue)
+        {
+            pivotPercentUpValue += distancePercentUnit;
+            ++progressPercent;
+        }
+        progressText.text = $"{defaultText} {progressPercent.ToString()}%";
         progressText.text += pointString.Substring(0, 3 - pointMinCount);
-
     }
-
+    private void Update()
+    {
+        if (textUpdateTime <= textUpdateTimer)
+        {
+            GameProgressUpdate();
+            textUpdateTimer = 0f;
+        }
+        else
+            textUpdateTimer += Time.deltaTime;
+    }
 }
