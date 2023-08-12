@@ -154,12 +154,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1593011724}
   - {fileID: 1188832781}
   - {fileID: 111525034}
   - {fileID: 107684273}
   - {fileID: 1146934573}
   - {fileID: 880751699}
-  - {fileID: 1593011724}
   - {fileID: 1345323180}
   m_Father: {fileID: 147268208}
   m_RootOrder: 0
@@ -341,7 +341,7 @@ RectTransform:
   - {fileID: 145705017}
   - {fileID: 1660027812}
   m_Father: {fileID: 42002459}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -422,7 +422,7 @@ RectTransform:
   - {fileID: 177189815}
   - {fileID: 293674026}
   m_Father: {fileID: 42002459}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1152,7 +1152,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315630481
 MonoBehaviour:
@@ -1797,7 +1797,7 @@ GameObject:
   - component: {fileID: 565565301}
   - component: {fileID: 565565300}
   - component: {fileID: 565565299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InfoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 626447618}
   - component: {fileID: 626447620}
   - component: {fileID: 626447619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3248,7 +3248,7 @@ RectTransform:
   - {fileID: 1083868026}
   - {fileID: 993025516}
   m_Father: {fileID: 42002459}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4003,7 +4003,7 @@ RectTransform:
   - {fileID: 1397105713}
   - {fileID: 1163212284}
   m_Father: {fileID: 42002459}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4042,7 +4042,7 @@ GameObject:
   - component: {fileID: 1163212287}
   - component: {fileID: 1163212286}
   - component: {fileID: 1163212285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ResellButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4268,7 +4268,7 @@ RectTransform:
   - {fileID: 1028278019}
   - {fileID: 1218114157}
   m_Father: {fileID: 42002459}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5455,7 +5455,7 @@ GameObject:
   - component: {fileID: 1397105716}
   - component: {fileID: 1397105715}
   - component: {fileID: 1397105714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5479,7 +5479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -23.300003}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397105714
@@ -6236,7 +6236,7 @@ RectTransform:
   - {fileID: 1405009291}
   - {fileID: 1672828100}
   m_Father: {fileID: 42002459}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
