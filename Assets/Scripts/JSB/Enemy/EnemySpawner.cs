@@ -18,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
         SP_COLUM,
     }
 
+    [SerializeField] private int curLevel;
     [SerializeField] private Transform player;
     [Header("적이 증가한다면 타입에 맞춰서 적 프리펩을 넣어야함")]
     [SerializeField] private List<GameObject> lstEnemyPrefabs;
@@ -73,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
         GameObject createdEnemy = GameObject.Instantiate(lstEnemyPrefabs[type], spawnPoint,Quaternion.identity,null);
-        createdEnemy.transform.Rotate(new Vector3(0,0,90));
+        createdEnemy.transform.Rotate(new Vector3(0,0,-90));
         createdEnemy.GetComponent<Enemy>().SettingEnemyInfo(player);
     }
 
@@ -83,6 +84,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+
+        float percent = PlayerInfoManager.Instance.ProgressPrecent;
+        if(percent >= 10 * curLevel)
+        {
+            curLevel++;
+        }
+        if (percent < 10f)
+            return;
         if (timer >= spawnCoolTime)
         {
             for(int i = 0; i < spawnCount; ++i)
