@@ -60,12 +60,14 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayLobbySound()
     {
+        bgmSource.Stop();
         bgmSource.loop = true;
         bgmSource.clip = lobbySound;
         bgmSource.Play();
     }
     public void PlayInGameSound()
     {
+        bgmSource.Stop();
         bgmSource.loop = true;
         bgmSource.clip = inGameSound;
         bgmSource.Play();
@@ -73,7 +75,6 @@ public class SoundManager : MonoBehaviour
     public void ButtonClickSound()
     {
         effectSource.PlayOneShot(buttonSound);
-
     }
     public void SwordAttackSound()
     {

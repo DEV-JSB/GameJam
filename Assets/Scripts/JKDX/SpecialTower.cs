@@ -20,6 +20,7 @@ public class SpecialTower : Tower
     }
     protected override void Attack(Collider2D[] cols)
     {
+        SoundManager.Instance.SpecialAttackSound();
         float nearestDis = 0;
         for (int i = 0; i < cols.Length; i++)
         {

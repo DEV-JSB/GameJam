@@ -10,6 +10,11 @@ public class TurretInfoUI : MonoBehaviour
     [SerializeField] private GameObject obj;
     private void Start()
     {
-        buttonUI.onClick.AddListener(() => obj.SetActive(false));
+        buttonUI = GetComponent<Button>();
+
+        buttonUI.onClick.AddListener(() => {
+            Debug.LogError("Info PopUp");
+            obj.SetActive(false);
+            });
     }
 }

@@ -51,6 +51,7 @@ public class ShopUI : MonoBehaviour
 
     private void Start()
     {
+        turretInfoButton.onClick.AddListener(() => turretInfoUI.SetActive(true));
         //closeShopButton.onClick.AddListener(CloseShop);
         getTurretButton.onClick.AddListener(CreateTurret);
         resellTurretButton.onClick.AddListener(PopUpSellUI);
