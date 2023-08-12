@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "1UGSO8YePcA",
+	"hash": "ytbh1EpS+cU",
 	"spine": "4.1.23",
-	"x": -188.32,
-	"y": -114.67,
-	"width": 322.21,
-	"height": 466.49,
+	"x": -182.8,
+	"y": -114.68,
+	"width": 311.48,
+	"height": 497,
 	"images": "./캐릭터/로마 캐릭터/Gladiator_1tier/",
 	"audio": "C:/Users/82105/Desktop/게임잼 디자인"
 },
@@ -287,7 +287,7 @@
 	}
 ],
 "animations": {
-	"rome1_attack": {
+	"attack": {
 		"bones": {
 			"RArm2": {
 				"rotate": [
@@ -450,7 +450,7 @@
 			}
 		}
 	},
-	"rome1_idle": {
+	"idle": {
 		"bones": {
 			"higher body": {
 				"translate": [
