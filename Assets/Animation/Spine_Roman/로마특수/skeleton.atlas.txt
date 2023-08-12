@@ -1,0 +1,30 @@
+skeleton.png
+	size: 945, 312
+	filter: Linear, Linear
+	pma: true
+#1 head
+	bounds: 653, 6, 304, 290
+	offsets: 221, 300, 1080, 1350
+	rotate: 90
+#2 Larm
+	bounds: 130, 23, 109, 98
+	offsets: 348, 247, 1080, 1350
+#3 flag
+	bounds: 2, 123, 187, 649
+	offsets: 53, 162, 1080, 1350
+	rotate: 90
+#4 body
+	bounds: 2, 2, 119, 126
+	offsets: 282, 219, 1080, 1350
+	rotate: 90
+#5 Rarm
+	bounds: 241, 52, 83, 69
+	offsets: 240, 253, 1080, 1350
+#6 Rleg
+	bounds: 405, 77, 44, 80
+	offsets: 303, 171, 1080, 1350
+	rotate: 90
+#7 Lleg
+	bounds: 326, 73, 48, 77
+	offsets: 349, 172, 1080, 1350
+	rotate: 90
